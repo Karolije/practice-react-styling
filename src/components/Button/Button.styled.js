@@ -4,10 +4,17 @@ const backgroundColors = {
   primary: (theme) => theme?.colors?.primary || "#007bff",
   secondary: (theme) => theme?.colors?.secondary || "#e2e3e5",
 };
+
+const hoverColors = {
+  primary: (theme) => theme?.colors?.primaryHover || "#0056b3",
+  secondary: (theme) => theme?.colors?.secondaryHover || "#d6d8db",
+};
+
 const sizes = {
   lg: (theme) => theme?.buttonPadding?.lg || "0.5rem 1rem",
   sm: (theme) => theme?.buttonPadding?.sm || "0.5rem 0.25rem",
 };
+
 const StyledButton = styled.button`
   all: unset;
   cursor: pointer;
@@ -19,6 +26,10 @@ const StyledButton = styled.button`
   border-color: #007bff;
   background-color: ${({ variant, theme }) =>
     backgroundColors[variant]?.(theme)};
+
+  &:hover {
+    background-color: ${({ variant, theme }) => hoverColors[variant]?.(theme)};
+  }
 
   ${({ active }) =>
     active &&

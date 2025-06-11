@@ -12,7 +12,7 @@ const Task02 = () => {
         </RBButton>
       </Col>
       <Col>
-        <Button variant="primary" size="lg" disabled>
+        <Button variant="primary" size="lg">
           Button!
         </Button>
       </Col>
